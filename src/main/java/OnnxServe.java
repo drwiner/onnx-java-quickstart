@@ -53,6 +53,7 @@ public class OnnxServe {
                 float[][] perTokenVector = (float[][]) result.get(1).getValue();
                 float [] vector = perTokenVector[0];
                 System.out.println(vector.length);
+                assert(vector.length == 768);
 
             }
         } catch (OrtException e) {
