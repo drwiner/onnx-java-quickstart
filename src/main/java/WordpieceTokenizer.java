@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class WordpieceTokenizer  {
 
@@ -19,6 +20,14 @@ public class WordpieceTokenizer  {
         this.unknown = unknown;
         this.maxInputChars = maxInputChars;
         this.vocabulary = vocabulary;
+    }
+
+    public long[] tokenToIds(List<String> tokens){
+        long[] idArray = new long[tokens.size()];
+        for (int i=0; i< tokens.size(); i++){
+            idArray[i] = vocabulary.getIndex(tokens.get(i));
+        }
+        return idArray;
     }
 
     public List<String> tokenize(String sentence) {

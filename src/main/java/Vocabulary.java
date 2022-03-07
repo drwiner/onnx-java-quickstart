@@ -190,7 +190,7 @@ public class Vocabulary implements IVocabulary {
         return new Builder();
     }
 
-    /** Builder class that is used to build the {@link DefaultVocabulary}. */
+    /** Builder class that is used to build the {@link Vocabulary}. */
     public static final class Builder {
 
         List<List<String>> sentences = new ArrayList<>();
@@ -203,10 +203,10 @@ public class Vocabulary implements IVocabulary {
 
         /**
          * Sets the optional parameter that specifies the minimum frequency to consider a token to
-         * be part of the {@link DefaultVocabulary}. Defaults to no minimum.
+         * be part of the {@link Vocabulary}. Defaults to no minimum.
          *
          * @param minFrequency the minimum frequency to consider a token to be part of the {@link
-         *     DefaultVocabulary} or -1 for no minimum
+         *     Vocabulary} or -1 for no minimum
          * @return this {@code VocabularyBuilder}
          */
         public Builder optMinFrequency(int minFrequency) {
@@ -261,7 +261,7 @@ public class Vocabulary implements IVocabulary {
         }
 
         /**
-         * Adds the given sentence to the {@link DefaultVocabulary}.
+         * Adds the given sentence to the {@link Vocabulary}.
          *
          * @param sentence the sentence to be added
          * @return this {@code VocabularyBuilder}
@@ -272,7 +272,7 @@ public class Vocabulary implements IVocabulary {
         }
 
         /**
-         * Adds the given list of sentences to the {@link DefaultVocabulary}.
+         * Adds the given list of sentences to the {@link Vocabulary}.
          *
          * @param sentences the list of sentences to be added
          * @return this {@code VocabularyBuilder}
@@ -283,7 +283,7 @@ public class Vocabulary implements IVocabulary {
         }
 
         /**
-         * Adds a text vocabulary to the {@link DefaultVocabulary}.
+         * Adds a text vocabulary to the {@link Vocabulary}.
          *
          * <pre>
          *   Example text file(vocab.txt):
@@ -303,7 +303,7 @@ public class Vocabulary implements IVocabulary {
         }
 
         /**
-         * Adds a text vocabulary to the {@link DefaultVocabulary}.
+         * Adds a text vocabulary to the {@link Vocabulary}.
          *
          * @param url the text file url
          * @return this {@code VocabularyBuilder}
@@ -380,7 +380,7 @@ public class Vocabulary implements IVocabulary {
         }
 
         /**
-         * Adds a customized vocabulary to the {@link DefaultVocabulary}.
+         * Adds a customized vocabulary to the {@link Vocabulary}.
          *
          * @param url the text file url
          * @param lambda the function to parse the vocabulary file
@@ -391,9 +391,9 @@ public class Vocabulary implements IVocabulary {
         }
 
         /**
-         * Builds the {@link DefaultVocabulary} object with the set arguments.
+         * Builds the {@link Vocabulary} object with the set arguments.
          *
-         * @return the {@link DefaultVocabulary} object built
+         * @return the {@link Vocabulary} object built
          */
         public Vocabulary build() {
             if (maxTokens > 0 && maxTokens < reservedTokens.size()) {
@@ -405,7 +405,7 @@ public class Vocabulary implements IVocabulary {
     }
 
     /**
-     * {@code TokenInfo} represents the information stored in the {@link DefaultVocabulary} about a
+     * {@code TokenInfo} represents the information stored in the {@link Vocabulary} about a
      * given token.
      */
     private static final class TokenInfo {
